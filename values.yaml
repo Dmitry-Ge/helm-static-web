@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+# Данные для ConfigMap (наша статическая страница)
+page:
+  title: "Helm Tutorial"
+  body: "<h1>Hello from Helm!</h1><p>This is a static page. [2]</p>"
+
+# Данные для Secret
+secrets:
+  apiKey: "super-secret-api-key-123"
+  basicAuth:
+    username: "admin"
+    password: "securepassword"
+
+# данные для ingress
+ingress:
+  enabled: false
+  host: "static-web.local"
