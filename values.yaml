@@ -23,5 +23,5 @@ secrets:
 
 # данные для ingress
 ingress:
-  enabled: false
+  enabled: true
   host: "static-web.local"
